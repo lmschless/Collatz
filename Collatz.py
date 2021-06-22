@@ -1,7 +1,6 @@
 import sys
 
 def most_outer():
-  #number = val
   def outer(number):
     if number > 1:
       collatz(number)
@@ -16,8 +15,11 @@ def most_outer():
         else: return outer(3 * number + 1) 
     except: 
       print(f'There has been an error with Number: {number}')
-    
-  number = int(input('Enter a number: '))
-  outer(number)
+  try:  
+    number = int(input('Enter a number: '))
+    outer(number)
+  except:
+    print('Please input an integer!')
 
 most_outer()
+
